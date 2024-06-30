@@ -1,20 +1,22 @@
-const fs = require("fs-extra");
+ const fs = require("fs-extra");
 const axios = require("axios");
 const path = require("path");
 const { getPrefix } = global.utils;
 const { commands, aliases } = global.GoatBot;
-const doNotDelete = "[ 🐐 | Goat Bot V2 ]";
+const doNotDelete = "𝘩𝘪𝘴 𝘭𝘪𝘯𝘬 𝘵𝘰 𝘱𝘳𝘰𝘧𝘪𝘭𝘦:【 https://facebook.com/geraldmax";
 /** 
 * @author NTKhang
 * @author: do not delete it
 * @message if you delete or edit it you will get a global ban
+* please don't ban me, your help.js is Modified 
 */
+
 
 module.exports = {
 	config: {
 		name: "help",
 		version: "1.18",
-		author: "NTKhang",
+		author: "NTKhang",// modified by Elohime hatake
 		countDown: 5,
 		role: 0,
 		shortDescription: {
@@ -43,7 +45,7 @@ module.exports = {
 
 	langs: {
 		vi: {
-			help: "╭─────────────⭓"
+			help: "╭────𝗠𝗮𝘁𝗲𝗼-𝗰𝗵𝗮𝘁𝗯𝗼𝘁─────⭓"
 				+ "\n%1"
 				+ "\n├─────⭔"
 				+ "\n│ Trang [ %2/%3 ]"
@@ -104,58 +106,54 @@ module.exports = {
 			pageNotFound: "Trang %1 không tồn tại"
 		},
 		en: {
-			help: "╭─────────────⭓"
+			help: "╭───𓆩𝗠𝗮𝘁𝗲𝗼-𝗰𝗵𝗮𝘁𝗯𝗼𝘁────⦿"
 				+ "\n%1"
-				+ "\n├─────⭔"
-				+ "\n│ Page [ %2/%3 ]"
-				+ "\n│ Currently, the bot has %4 commands that can be used"
-				+ "\n│ » Type %5help <page> to view the command list"
-				+ "\n│ » Type %5help to view the details of how to use that command"
-				+ "\n├────────⭔"
-				+ "\n│ %6"
-				+ "\n╰─────────────⭓",
-			help2: "%1├───────⭔"
-				+ "\n│ » Currently, the bot has %2 commands that can be used"
-				+ "\n│ » Type %3help <command name> to view the details of how to use that command"
-				+ "\n│ %4"
-				+ "\n╰─────────────⭓",
+				+ "\n✪──────⦿"
+				+ "\n│➛ 𝒑𝒂𝒈𝒆 [ %2/%3 ]"
+				+ "\n│➛ 𝐜𝐨𝐦𝐦𝐚𝐧𝐝 𝐧𝐮𝐦𝐛𝐞𝐫 𝐢𝐧 𝐭𝐨𝐭𝐚𝐥: %4"     + "\n│ 𝐓𝐲𝐩𝐞 %5𝐡𝐞𝐥𝐩 <𝐩𝐚𝐠𝐞> 𝐓𝐨 𝐕𝐢𝐞𝐰 𝐓𝐡𝐞 𝐂𝐨𝐦𝐦𝐚𝐧𝐝 𝐋𝐢𝐬𝐭"     + "\n│  𝐓𝐲𝐩𝐞 %5𝐡𝐞𝐥𝐩 𝐓𝐨 𝐕𝐢𝐞𝐰 𝐓𝐡𝐞 𝐃𝐞𝐭𝐚𝐢𝐥𝐬 𝐎𝐟 𝐇𝐨𝐰 𝐓𝐨 𝐔𝐬𝐞 𝐓𝐡𝐚𝐭 𝐂𝐨𝐦𝐦𝐚𝐧𝐝"     + "\n│type %5support or if you are already in this my admin support group join my admin friend group %5secondsupportgc."
+				+ "\n✪──────⦿"
+				+ "\n✪ %6"
+				+ "\n╰─────────────⦿",
+			help2: "%1╭──────────⦿"
+				+ "\n│ 【𝐜𝐨𝐦𝐦𝐚𝐧𝐝 𝐧𝐮𝐦𝐛𝐞𝐫 𝐢𝐧 𝐭𝐨𝐭𝐚𝐥】「%2」"     + "\n│ 【𝐔𝐒𝐀𝐆𝐄】「%3 𝐓𝐲𝐩𝐞 %5𝐡𝐞𝐥𝐩 𝐓𝐨 𝐕𝐢𝐞𝐰 𝐓𝐡𝐞 𝐃𝐞𝐭𝐚𝐢𝐥𝐬 𝐎𝐟 𝐇𝐨𝐰 𝐓𝐨 𝐔𝐬𝐞 𝐓𝐡𝐚𝐭 𝐂𝐨𝐦𝐦𝐚𝐧𝐝」\n│ ⚠️| 𝘪𝘯𝘧𝘰:𝘵𝘩𝘪𝘴 𝘣𝘰𝘵 𝘸𝘢𝘴 𝘤𝘳𝘦𝘢𝘵𝘦𝘥 𝘣𝘺「𝘎𝘦𝘳𝘢𝘭𝘥-𝘮𝘢𝘹」 "
+				+ "\n╰─────────────⦿\n╭─────────────⦿\n│%4\n╰────────────⦿",
 			commandNotFound: "Command \"%1\" does not exist",
-			getInfoCommand: "╭── NAME ────⭓"
-				+ "\n│ %1"
-				+ "\n├── INFO"
-				+ "\n│ Description: %2"
-				+ "\n│ Other names: %3"
-				+ "\n│ Other names in your group: %4"
-				+ "\n│ Version: %5"
-				+ "\n│ Role: %6"
-				+ "\n│ Time per command: %7s"
-				+ "\n│ Author: %8"
-				+ "\n├── USAGE"
-				+ "\n│%9"
-				+ "\n├── NOTES"
-				+ "\n│ The content inside <XXXXX> can be changed"
-				+ "\n│ The content inside [a|b|c] is a or b or c"
-				+ "\n╰──────⭔",
-			onlyInfo: "╭── INFO ────⭓"
-				+ "\n│ Command name: %1"
-				+ "\n│ Description: %2"
-				+ "\n│ Other names: %3"
-				+ "\n│ Other names in your group: %4"
-				+ "\n│ Version: %5"
-				+ "\n│ Role: %6"
-				+ "\n│ Time per command: %7s"
-				+ "\n│ Author: %8"
-				+ "\n╰─────────────⭓",
-			onlyUsage: "╭── USAGE ────⭓"
-				+ "\n│%1"
-				+ "\n╰─────────────⭓",
-			onlyAlias: "╭── ALIAS ────⭓"
-				+ "\n│ Other names: %1"
-				+ "\n│ Other names in your group: %2"
-				+ "\n╰─────────────⭓",
-			onlyRole: "╭── ROLE ────⭓"
-				+ "\n│%1"
-				+ "\n╰─────────────⭓",
+			getInfoCommand: "╭────⦿ NAME ──────⦿"
+				+ "\n│➛ %1"
+				+ "\n│▫INFO"
+				+ "\n│➛ Description: %2"
+				+ "\n│➛ Other names: %3"
+				+ "\n│➛ Other names in your group: %4"
+				+ "\n│➛ Version: %5"
+				+ "\n│➛ Role: %6"
+				+ "\n│➛ Time per command: %7s"
+				+ "\n│➛ Author: %8"
+				+ "\n│➛ USAGE"
+				+ "\n%9"
+				+ "\n▫NOTES"
+				+ "\n The content inside <XXXXX> can be changed"
+				+ "\n The content inside [a|b|c] is a or b or c"
+				+ "\n╰─────────────⦿",
+			onlyInfo: "╭────⦿INFO ─────⦿"
+				+ "\n│➛ Command name: %1"
+				+ "\n│➛ Description: %2"
+				+ "\n│➛ Other names: %3"
+				+ "\n│➛ Other names in your group: %4"
+				+ "\n│➛ Version: %5"
+				+ "\n│➛ Role: %6"
+				+ "\n│➛ Time per command: %7s"
+				+ "\n  Author: %8"
+				+ "\n╰─────────────⦿",
+			onlyUsage: "╭───⦿ USAGE ─────⦿"
+				+ "\n│➛%1"
+				+ "\n╰─────────────⦿",
+			onlyAlias: "╭───⦿ ALIAS ─────⦿"
+				+ "\n│➛ Other names: %1"
+				+ "\n│➛ Other names in your group: %2"
+				+ "\n╰─────────────⦿",
+			onlyRole: "╭────⦿ ROLE ───⦿"
+				+ "\n│➛%1"
+				+ "\n╰─────────────⦿",
 			doNotHave: "Do not have",
 			roleText0: "0 (All users)",
 			roleText1: "1 (Group administrators)",
@@ -215,7 +213,7 @@ module.exports = {
 
 				const returnArray = allPage[page - 1] || [];
 				const startNumber = (page - 1) * numberOfOnePage + 1;
-				msg += (returnArray || []).reduce((text, item, index) => text += `│ ${index + startNumber}${index + startNumber < 10 ? " " : ""}. ${item.data}\n`, '').slice(0, -1);
+				msg += (returnArray || []).reduce((text, item, index) => text += `➛${index + startNumber}${index + startNumber < 10 ? " " : ""}. 「${item.data}」\n`, '').slice(0, -1);
 				await message.reply(getLang("help", msg, page, totalPage, commands.size, prefix, doNotDelete));
 			}
 			else if (sortHelp == "category") {
@@ -234,9 +232,9 @@ module.exports = {
 				}
 				arrayInfo.sort((a, b) => (a.category < b.category ? -1 : 1));
 				arrayInfo.forEach((data, index) => {
-					const categoryUpcase = `${index == 0 ? `╭` : `├`}─── ${data.category.toUpperCase()} ${index == 0 ? "⭓" : "⭔"}`;
-					data.names = data.names.sort().map(item => item = `│ ${item}`);
-					msg += `${categoryUpcase}\n${data.names.join("\n")}\n`;
+					const categoryUpcase = `${index == 0 ? `╭──⦿` : `╭──⦿ `}旦 ${data.category.toUpperCase()} ${index == 0 ? "】" : "】"}`;
+					data.names = data.names.sort().map(item => item = `│「${item}」`);
+					msg += `${categoryUpcase}\n${data.names.join("\n")}\n╰────────⦿\n`;
 				});
 				message.reply(getLang("help2", msg, commands.size, prefix, doNotDelete));
 			}
@@ -292,7 +290,7 @@ module.exports = {
 			let sendWithAttachment = false; // check subcommand need send with attachment or not
 
 			if (args[1]?.match(/^-g|guide|-u|usage$/)) {
-				formSendMessage.body = getLang("onlyUsage", guideBody.split("\n").join("\n│"));
+				formSendMessage.body = getLang("onlyUsage", guideBody.split("\n").join("\n✵"));
 				sendWithAttachment = true;
 			}
 			else if (args[1]?.match(/^-a|alias|aliase|aliases$/))
@@ -364,4 +362,4 @@ function cropContent(content, max) {
 		content = content + "...";
 	}
 	return content;
-}
+	 }
