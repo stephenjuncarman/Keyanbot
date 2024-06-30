@@ -1,110 +1,124 @@
 const fs = require('fs');
 const moment = require('moment-timezone');
-const NepaliDate = require('nepali-date');
-const fast = require('fast-speedtest-api');
+const os = require('os');
+const si = require('systeminformation');
+const { performance } = require('perf_hooks');
 
 module.exports = {
-  config: {
-    name: "info",
-    aliases: ['info', 'owner'],
-    version: "1.3",
-    author: "AceGun",
-    countDown: 5,
-    role: 0,
-    shortDescription: {
-      vi: "",
-      en: "Sends information about the bot and admin along with an image."
+    config: {
+        name: "info",
+        version: "1.0",
+        author: "Itz Aryan",// modified by Gerald www.facebook.com/g13065994
+        countDown: 5,
+        role: 0,
+        shortDescription: { vi: "", en: "" },
+        longDescription: { vi: "", en: "" },
+        category: "owner",
+        guide: { en: "" },
+        envConfig: {}
     },
-    longDescription: {
-      vi: "",
-      en: "Sends information about the bot and admin along with an image."
+    onStart: async function ({ message }) {
+        const botName = "·♪·вστ¸♬";
+        const botPrefix = "+";
+        const now = moment().tz('Africa/lagos');
+        const date = now.format('MMMM Do YYYY');
+        const time = now.format('h:mm:ss A');
+        const uptime = process.uptime();
+        const seconds = Math.floor(uptime % 60);
+        const minutes = Math.floor((uptime / 60) % 60);
+        const hours = Math.floor((uptime / (60 * 60)) % 24);
+        const days = Math.floor(uptime / (60 * 60 * 24));
+        const uptimeString = `${days} days ${hours} hours ${minutes} minutes ${seconds} seconds`;
+
+        const oname = `gerald`;
+        const age = `12`;
+        const phone = `+23408121662697`;
+        const stats = `single`;
+        const fb = `www.facebook.com/g13065994`;
+
+        const cpu = os.cpus()[0].model;
+        const cores = os.cpus().length;
+        const arch = os.arch();
+        const platform = os.platform();
+        const totalMemory = (os.totalmem() / (1024 ** 3)).toFixed(2);
+        const freeMemory = (os.freemem() / (1024 ** 3)).toFixed(2);
+        const usedMemory = (totalMemory - freeMemory).toFixed(2);
+
+        // Disk information
+        const diskInfo = await si.fsSize();
+        const totalDisk = (diskInfo[0].size / (1024 ** 3)).toFixed(2);
+        const usedDisk = (diskInfo[0].used / (1024 ** 3)).toFixed(2);
+        const freeDisk = (diskInfo[0].available / (1024 ** 3)).toFixed(2);
+
+        // Initialize link with a placeholder or handle properly based on your requirements
+        const links = [
+            "https://i.imgur.com/uVBM67t.jpeg",
+            "https://i.imgur.com/NaxvRNg.jpeg"
+        ];
+        const link = links[Math.floor(Math.random() * links.length)];
+
+        // Network information
+        const networkInterfaces = os.networkInterfaces();
+        const primaryInterface = Object.keys(networkInterfaces)[0];
+        const ipAddress = networkInterfaces[primaryInterface][0].address;
+
+        // System Load
+        const load = os.loadavg();
+        const loadString = `1m: ${load[0].toFixed(2)}, 5m: ${load[1].toFixed(2)}, 15m: ${load[2].toFixed(2)}`;
+
+        // Speed (ping)
+        const start = performance.now();
+        await new Promise(resolve => setTimeout(resolve, 100));
+        const end = performance.now();
+        const ping = (end - start).toFixed(2);
+
+        // Reply message construction
+        message.reply({
+            body: `《 𝗕𝗢𝗧 𝗢𝗪𝗡𝗘𝗥 𝗜𝗡𝗙𝗢 》
+\Name: ${botName}
+\Bot Prefix: ${botPrefix}
+\Date: ${date}
+\Time: ${time}
+\Uptime: ${uptimeString}
+=============== 
+《 𝗢𝗪𝗡𝗘𝗥 𝗜𝗡𝗙𝗢 》
+ \Name: ${oname}
+ \Age: ${age}
+ \Phone N.o: ${phone}
+ \relationship: ${stats}
+ \Facebook: ${fb}
+ ===============
+《 𝗦𝗬𝗦𝗧𝗘𝗠 𝗜𝗡𝗙𝗢 》
+\CPU: ${cpu}
+\Cores: ${cores}
+\Architecture: ${arch}
+\Platform: ${platform}
+\Total Memory: ${totalMemory} GB
+\Used Memory: ${usedMemory} GB
+\Free Memory: ${freeMemory} GB
+=============== 
+《 𝗗𝗜𝗦𝗞 𝗜𝗡𝗙𝗢 》
+\Total Disk: ${totalDisk} GB
+\Used Disk: ${usedDisk} GB
+\Free Disk: ${freeDisk} GB
+=============== 
+《 𝗡𝗘𝗧𝗪𝗢𝗥𝗞 𝗜𝗡𝗙𝗢 》
+\IP Address: ${ipAddress}
+=============== 
+《 𝗦𝗬𝗦𝗧𝗘𝗠 𝗟𝗢𝗔𝗗 》
+\Load (1m): ${load[0].toFixed(2)}
+\Load (5m): ${load[1].toFixed(2)}
+\Load (15m): ${load[2].toFixed(2)}
+=============== 
+《 𝗣𝗘𝗥𝗙𝗢𝗥𝗠𝗔𝗡𝗖𝗘 𝗜𝗡𝗙𝗢 》
+\Ping: ${ping} ms
+===============`,
+            attachment: await global.utils.getStreamFromURL(link)
+        });
     },
-    category: "utility",
-    guide: {
-      en: "{pn}"
-    },
-    envConfig: {}
-  },
-
-  onStart: async function ({ message, api, event, usersData, threadsData }) {
-    const allUsers = await usersData.getAll();
-    const allThreads = await threadsData.getAll();
-    const speedTest = new fast({
-        token: "YXNkZmFzZGxmbnNkYWZoYXNkZmhrYWxm",
-        verbose: false,
-        timeout: 10000,
-        https: true,
-        urlCount: 5,
-        bufferSize: 8,
-        unit: fast.UNITS.Mbps
-      });
-    const result = await speedTest.getSpeed();
-    const botName = global.GoatBot.config.nickNameBot;
-    const botPrefix = global.GoatBot.config.prefix;
-    const authorName = global.GoatBot.config.authorName;
-    const authorFB = global.GoatBot.config.authorFB;
-    const authorInsta = "https://www.instagram.com/xnil867";
-    const authorEmail = global.GoatBot.config.authorEmail;
-    const authorGithub = "https://github.com/X-nil143";
-    const status = "𝙎𝙞𝙣𝙜𝙡𝙚";
-    const timeStart = Date.now();
-
-    const urls = JSON.parse(fs.readFileSync('scripts/cmds/xnil/info.json'));
-    const link = urls[Math.floor(Math.random() * urls.length)];
-
-    // Get current date and time in Asia/Kathmandu timezone
-    const now = moment().tz('Asia/Dhaka');
-    const date = now.format('MMMM Do YYYY');
-    const time = now.format('h:mm:ss A');
-
-    // Calculate bot uptime
-    const uptime = process.uptime();
-    const uptimeString = formatUptime(uptime);
-
-    const ping = Date.now() - timeStart;
-
-    const replyMessage = `===「 Bot & Owner Info 」===
-❏ Bot Name: ${botName}
-❏ Bot Prefix: ${botPrefix}
-❏ Author Name: ${authorName}
-❏ FB: ${authorFB}
-❏ Instagram: ${authorInsta}
-❏ Author Email: ${authorEmail}
-❏ Author Github: ${authorGithub}
-❏ Status: ${status}
-❏ Date: ${date}
-❏ Total Threads: ${allThreads.length}
-❏ Total Users: ${allUsers.length}
-❏ Time: ${time}
-❏ Bot Running: ${uptimeString}
-❏ Bot's Speed: ${result} MBPS
-=====================`;
-
-    const attachment = await global.utils.getStreamFromURL(link);
-    message.reply({
-      body: replyMessage,
-      attachment
-    });
-  },
-
-  onChat: async function({ event, message, getLang }) {
-    if (event.body && event.body.toLowerCase() === "info") {
-      await this.onStart({ message });
+    onChat: async function ({ event, message, getLang }) {
+        if (event.body && event.body.toLowerCase() === "info") {
+            this.onStart({ message });
+        }
     }
-  }
 };
-
-function formatUptime(uptime) {
-  const seconds = Math.floor(uptime % 60);
-  const minutes = Math.floor((uptime / 60) % 60);
-  const hours = Math.floor((uptime / (60 * 60)) % 24);
-  const days = Math.floor(uptime / (60 * 60 * 24));
-
-  const uptimeString = [];
-  if (days > 0) uptimeString.push(`${days}d`);
-  if (hours > 0) uptimeString.push(`${hours}h`);
-  if (minutes > 0) uptimeString.push(`${minutes}min`);
-  if (seconds > 0) uptimeString.push(`${seconds}sec`);
-
-  return uptimeString.join(" ");
-}
