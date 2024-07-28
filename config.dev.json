@@ -18,7 +18,7 @@
   },
   "adminBot": [
     "100088249106822",
-    "100088249106822"
+    ""
   ],
   "GOD": [
     "100088249106822",
@@ -33,11 +33,11 @@
     "whiteListIds": [],
     "notes": "if you enable this feature, only the ids in the whiteListIds section can use the bot"
   },
-  "nickNameBot": "『 + 』·♪·❲𝙶𝙴𝚁𝙰𝙻𝙳 𝙱𝙾𝚃❳¸♬",
+  "nickNameBot": "❴» ? «❵➱ 𝙈𝘼𝙏𝙀𝙊❆𝘾𝙃𝘼𝙏𝘽𝙊𝙏࿐",
   "authorName": "Gérald",
   "authorFB": "https://www.facebook.com/100088249106822",
   "authorEmail": "g13065994@gmail.com",
-  "prefix": "+",
+  "prefix": "?",
   "database": {
     "type": "sqlite",
     "uriMongodb": "",
