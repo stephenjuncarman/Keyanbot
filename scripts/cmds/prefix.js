@@ -46,7 +46,7 @@ module.exports = {
 			confirmThisThread: "Please react to this message to confirm change prefix in your box chat",
 			successGlobal: "Changed prefix of system bot to: %1",
 			successThisThread: "Changed prefix in your box chat to: %1",
-			myPrefix: "🌐 System prefix: %1\n🛸 Your box chat prefix: %2"
+			myPrefix: "                    𝗣𝗥𝗘𝗙𝗜𝗫\n╒╦╩╦╩╦╩╦╩╦╩╦╩╦╩╦╩╦╕\n𝕄𝕐 ℙℝ𝔼𝔽𝕀𝕏\n➤ %1\nℂℍ𝔸𝕋 ℙℝ𝔼𝔽𝕀𝕏\n➤ %2\n𝔻𝔼𝔽𝔸𝕌𝕃𝕋 ℙℝ𝔼𝔽𝕀𝕏\n➤ %2\n╘╦╩╦╩╦╩╦╩╦╩╦╩╦╩╦╩╦╛\n                    𝗨𝗦𝗔𝗚𝗘\n╒╦╩╦╩╦╩╦╩╦╩╦╩╦╩╦╩╦╕\n𝐇𝐎𝐖 𝐓𝐎 𝐔𝐒𝐄\n𝄖𝄖𝄖𝄖𝄖𝄖𝄖𝄖𝄖𝄖𝄖\n❲ ❶ ❳ %2help\n❲ ❷ ❳ %2callad\n❲ ❸ ❳ %2support\n╘╦╩╦╩╦╩╦╩╦╩╦╩╦╩╦╩╦╛\n             𝗠𝗔𝗜𝗡𝗧𝗘𝗡𝗔𝗡𝗖𝗘\n╒╦╩╦╩╦╩╦╩╦╩╦╩╦╩╦╩╦╕\n├ 𝙼𝙰𝚃𝙴𝙾 𝙲𝙷𝙰𝚃𝙱𝙾𝚃 𝚒𝚜 𝚊 𝚐𝚎𝚗𝚎𝚛𝚊𝚕 𝚋𝚘𝚝.\n├ 𝙼𝚊𝚝𝚎𝚘 𝙲𝚑𝚊𝚝𝚋𝚘𝚝 𝚠𝚊𝚜 𝚝𝚛𝚊𝚒𝚗𝚎𝚍 𝚋𝚢 𝚋𝚊𝚛𝚍 𝙰𝙸.\n├ 𝚙𝚕𝚎𝚊𝚜𝚎 𝚍𝚘𝚗'𝚝 𝚞𝚜𝚎 𝚝𝚑𝚎 𝙲𝙷𝙰𝚃 𝙱𝙾𝚃 𝚝𝚘 𝚜𝚙𝚊𝚖 𝚘𝚛 𝚐𝚘 𝚊𝚐𝚊𝚒𝚗𝚜𝚝 𝙵𝙱 𝚛𝚞𝚕𝚎 𝚝𝚘 𝚊𝚟𝚘𝚒𝚍 𝚊𝚌𝚌𝚘𝚞𝚗𝚝 𝚐𝚎𝚝𝚝𝚒𝚗𝚐 𝚜𝚞𝚜𝚙𝚎𝚗𝚜𝚒𝚘𝚗.\n├ 𝙿𝚕𝚎𝚊𝚜𝚎 𝚞𝚜𝚎 𝚋𝚘𝚝, 𝚍𝚘𝚗'𝚝 𝚛𝚎𝚙𝚘𝚛𝚝 𝚋𝚘𝚝 𝚝𝚘 𝙵𝚊𝚌𝚎𝚋𝚘𝚘𝚔. \n├ 𝙾𝚗𝚕𝚢 𝚛𝚎𝚙𝚘𝚛𝚝 𝚝𝚘 𝙾𝚠𝚗𝚎𝚛\n╘╦╩╦╩╦╩╦╩╦╩╦╩╦╩╦╩╦╛\n├ 𝚃𝚑𝚊𝚗𝚔𝚜 𝚏𝚘𝚛 𝚞𝚜𝚒𝚗𝚐 "
 		}
 	},
 
