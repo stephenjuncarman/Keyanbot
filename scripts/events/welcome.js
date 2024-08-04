@@ -1,3 +1,4 @@
+const p = global.utils.getPrefix(threadID);
 const { getTime, drive } = global.utils;
 if (!global.temp.welcomeEvent)
 	global.temp.welcomeEvent = {};
@@ -29,7 +30,7 @@ module.exports = {
 			welcomeMessage: "Thank you for inviting me to the group!\nBot prefix: %1\nTo view the list of commands, please enter: %1help",
 			multiple1: "you",
 			multiple2: "you guys",
-			defaultWelcomeMessage: `Hello {userName}.\nWelcome {multiple} to the chat group: {boxName}\nHave a nice {session} 😊`
+			defaultWelcomeMessage: `──━ 👑│𝗪𝗘𝗟𝗖𝗢𝗠𝗘 ━──\n▬▬▬▬▬▬▬▬▬▬▬▬▬\n┏━━━━━━━━━━━━━━━━━━━━━━┓\n┃ ━ 𝙷𝚎𝚕𝚕𝚘 {userName} .\n┃ ━ 𝚠𝚎𝚕𝚌𝚘𝚖𝚎 𝚝𝚘 𝚘𝚞𝚛 {boxName} 𝚐𝚛𝚘𝚞𝚙 𝚠𝚎 𝚊𝚛𝚎 𝚙𝚕𝚎𝚊𝚜𝚎𝚍 𝚝𝚘 𝚑𝚊𝚟𝚎 𝚢𝚘𝚞 𝚠𝚒𝚝𝚑 𝚞𝚜.\n┃ ━ {multiple} 𝚖𝚊𝚔𝚎 𝚢𝚘𝚞𝚛 𝚜𝚎𝚕𝚏 𝚌𝚘𝚖𝚏𝚘𝚛𝚝𝚊𝚋𝚕𝚎 𝚒𝚗 𝚝𝚑𝚒𝚜 𝚐𝚛𝚘𝚞𝚙 𝚏𝚎𝚎𝚕 𝚏𝚛𝚎𝚎 𝚝𝚘 𝚍𝚒𝚜𝚌𝚞𝚜𝚜 𝚊𝚋𝚘𝚞𝚝 𝚊𝚗𝚢𝚝𝚑𝚒𝚗𝚐 𝚎𝚡𝚌𝚎𝚙𝚝 𝚗𝚞𝚍𝚎, 𝚙𝚘𝚛𝚗, 𝚑𝚎𝚗𝚝𝚎𝚒.\n┃ ━ 𝚖𝚢 𝚙𝚛𝚎𝚏𝚒𝚡 𝚒𝚜 ${p}\n┗━━━━━━━━━━━━━━━━━━━━━━┛\n➤ 𝗠𝗔𝗧𝗘𝗢 𝗖𝗛𝗔𝗧𝗕𝗢𝗧 𝗧𝗠`
 		}
 	},
 
@@ -130,3 +131,4 @@ module.exports = {
 			};
 	}
 };
+			
