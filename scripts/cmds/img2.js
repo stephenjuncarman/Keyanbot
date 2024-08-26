@@ -3,7 +3,7 @@ const axios = require('axios');
 module.exports = {
   config: {
     name: 'img2',
-    aliases: [],
+    aliases: ['imgsearch'],
     version: '1.1',
     author: 'unknown 3xd',
     role: 0,
@@ -27,7 +27,7 @@ module.exports = {
       params: {
         q: query,
         searchType: 'image',
-        key: '',
+        key: 'AIzaSyCLBfvIqHiygU9ww9567Q3GF0BFLNmcRHM',
         cx: 'c5b8108dd2da64b29'
       }
     });
