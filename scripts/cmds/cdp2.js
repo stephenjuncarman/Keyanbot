@@ -4,9 +4,9 @@ const fs = require("fs-extra");
 module.exports = {
  config: {
  name: "cdp2",
- aliases: [],
+ aliases: ["dp2"],
  version: "1.0",
- author: "XyryllPanget",
+ author: "Samir",
  countDown: 5,
  role: 0,
  shortDescription: {
@@ -24,19 +24,19 @@ module.exports = {
  onStart: async function ({ api, event, args }) {
  try {
  const { data } = await axios.get(
- "https://tanjiro-api.onrender.com/cdp?api_key=tanjiro"
+ "https://api.zahwazein.xyz/randomanime/couples?apikey=zenzkey_92d341a7630e"
  );
- const maleImg = await axios.get(data.male, { responseType: "arraybuffer" });
+ const maleImg = await axios.get(data.result.male, { responseType: "arraybuffer" });
  fs.writeFileSync(__dirname + "/tmp/img1.png", Buffer.from(maleImg.data, "utf-8"));
- const femaleImg = await axios.get(data.female, { responseType: "arraybuffer" });
+ const femaleImg = await axios.get(data.result.female, { responseType: "arraybuffer" });
  fs.writeFileSync(__dirname + "/tmp/img2.png", Buffer.from(femaleImg.data, "utf-8"));
 
- const msg = "「 Here's your pair Dp✨ 」";
+ const msg = "Here's Couple DP";
  const allImages = [
  fs.createReadStream(__dirname + "/tmp/img1.png"),
  fs.createReadStream(__dirname + "/tmp/img2.png")
  ];
-
+ 
  return api.sendMessage({
  body: msg,
  attachment: allImages

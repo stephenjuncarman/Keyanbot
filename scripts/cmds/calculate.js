@@ -2,10 +2,10 @@ module.exports = {
   config: {
     name: "calculate",
     version: "1.0",
-    author: "OtinXSandip",
+    author: "AceGun",
     role: 0,
     colldown: 5,
-    shortDescription: "Perform  calculbasic arithmetications.",
+    shortDescription: "Perform basic arithmetic calculations.",
     category: "utility",
     guide: "{prefix}calculate <expression>"
   },
