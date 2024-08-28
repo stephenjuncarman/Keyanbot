@@ -48,7 +48,7 @@ login.userBanned=You've been banned from using a bot!!
 login.checkGbanError=An error occurred while checking GBAN, try update source to latest version (open cmd and type: node update)
 login.gbanMessage=You have been banned from the Goat-Bot project on %1 for the reason: %2\n» Time: %3
 login.gbanMessageToDate=You have been banned from the Goat-Bot project on %1 for the reason: %2\n» Time: %3\n» To date: %4
-login.gbanAdminMessage=User %1 has been banned from the Goat-Bot remake project on %2 for the reason: %3
+login.gbanAdminMessage=User %1 has been banned from the Goat-Bot project on %2 for the reason: %3
 login.openServerUptimeSuccess=🚀 Opened uptime server: %1
 login.openServerUptimeError=An error has occurred, cannot open server uptime
 login.restartListenMessage=ListenMQTT restart enabled every %1
@@ -59,17 +59,16 @@ login.refreshCookieAfter=Refreshing cookie after %1
 login.listenMqttClose=ListenMQTT closed
 login.listenMqttCloseByUser=ListenMQTT closed by user
 login.retryCheckLiveCookie=Retrying to check cookie... %1
-login.startBotSuccess=Gerald - Bot has been started successfully, start receiving messages from users
 
-version.tooOldVersion=You are using a too old version of Mateo Chat bot, please update to the latest version by typing the command: %1 into the cmd/console/terminal/shell
+version.tooOldVersion=You are using a too old version of Goat-Bot, please update to the latest version by typing the command: %1 into the cmd/console/terminal/shell
 
 # bot/custom.js
 custom.refreshedFb_dtsg=Refreshed fb_dtsg and jazoest successfully
 custom.refreshedFb_dtsgError=An error occurred when refreshing fb_dtsg and jazoest
 
 # bot/login/loadData.js
-loadData.loadThreadDataSuccess=Gerald - Loaded %1 group's data successfully!
-loadData.loadUserDataSuccess=Gerald - Loaded %1 user's data successfully!
+loadData.loadThreadDataSuccess=Loaded %1 group's data successfully!
+loadData.loadUserDataSuccess=Loaded %1 user's data successfully!
 loadData.refreshingThreadData=Updating the information of the groups...
 loadData.refreshThreadDataSuccess=Updated information of %1 group!
 loadData.refreshThreadDataError=Something went wrong when updating the groups information!
@@ -89,27 +88,27 @@ handlerCheckData.cantCreateThread=Groups with id '%1' cannot be written to the d
 handlerCheckData.cantCreateUser=Users with id '%1' cannot be written to the database!
 
 # bot/handler/handlerEvents.js
-handlerEvents.userBanned=You have been banned from using the bot\n» Reason: %1\n» Time: %2\n» User ID: %3
-handlerEvents.threadBanned=This group has been banned from using the bot\n» Reason: %1\n» Time: %2\n» Thread ID: %3
-handlerEvents.onlyAdminBox=This group is currently enabled only group administrators can use the bot
-handlerEvents.onlyAdminBot=❌ | 𝙲𝚞𝚛𝚛𝚎𝚗𝚝𝚕𝚢 𝚘𝚗𝚕𝚢 𝚋𝚘𝚝'𝚜 𝚊𝚍𝚖𝚒𝚗 𝚌𝚊𝚗 𝚞𝚜𝚎 𝚋𝚘𝚝
-handlerEvents.commandNotFound=❌│𝗗𝗢𝗘𝗦 𝗡𝗢𝗧 𝗘𝗫𝗜𝗦𝗧\n▬▬▬▬▬▬▬▬▬▬▬▬\n\n𝚃𝙷𝙴 𝙲𝙼𝙳 `%1` 𝙳𝙾𝙴𝚂 𝙽𝙾𝚃 𝙴𝚇𝙸𝚂𝚃 𝙸𝙽 𝙲𝙷𝙰𝚃𝙱𝙾𝚃 𝚂𝚈𝚂𝚃𝙴𝙼 𝙾𝚁 𝙼𝙰𝚈 𝙷𝙰𝚅𝙴 𝙱𝙴𝙴𝙽 𝚁𝙴𝙼𝙾𝚅𝙴𝙳 𝙵𝚁𝙾𝙼 𝙲𝙷𝙰𝚃𝙱𝙾𝚃 𝚂𝚈𝚂𝚃𝙴𝙼 𝚃𝚈𝙿𝙴 %2𝙷𝙴𝙻𝙿 𝚃𝙾 𝚂𝙴𝙴 𝙼𝚈 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂.
-handlerEvents.commandNotFound2=❌│𝗗𝗢𝗘𝗦 𝗡𝗢𝗧 𝗘𝗫𝗜𝗦𝗧\n▬▬▬▬▬▬▬▬▬▬▬\n\n𝚃𝙷𝙴 𝙲𝙼𝙳 𝚈𝙾𝚄 𝙰𝚁𝙴 𝚃𝚁𝚈𝙸𝙽𝙶 𝚃𝙾 𝙴𝚇𝙴𝙲𝚄𝚃𝙴 𝙳𝙾𝙴𝚂 𝙽𝙾𝚃 𝙴𝚇𝙸𝚂𝚃 𝙸𝙽 𝙲𝙷𝙰𝚃𝙱𝙾𝚃 𝚂𝚈𝚂𝚃𝙴𝙼 %1𝙷𝙴𝙻𝙿 𝚃𝙾 𝚂𝙴𝙴 𝙼𝚈 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂.
-handlerEvents.commandSyntaxError=𝗪𝗥𝗢𝗡𝗚 𝗦𝗬𝗡𝗧𝗔𝗫\n▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n𝐓𝐡𝐞 𝐜𝐨𝐦𝐦𝐚𝐧𝐝 𝐲𝐨𝐮 𝐚𝐫𝐞 𝐮𝐬𝐢𝐧𝐠 𝐢𝐬 𝐰𝐫𝐨𝐧𝐠 𝐬𝐲𝐧𝐭𝐚𝐱, 𝐩𝐥𝐞𝐚𝐬𝐞 𝐭𝐲𝐩𝐞 %1𝐡𝐞𝐥𝐩 %2 𝐭𝐨 𝐬𝐞𝐞 𝐭𝐡𝐞 𝐝𝐞𝐭𝐚𝐢𝐥𝐬 𝐨𝐟 𝐡𝐨𝐰 𝐭𝐨 𝐮𝐬𝐞 𝐭𝐡𝐢𝐬 𝐜𝐨𝐦𝐦𝐚𝐧𝐝.
-handlerEvents.onlyAdmin=🚫▕ 𝗔𝗖𝗖𝗘𝗦𝗦 𝗗𝗘𝗡𝗜𝗘𝗗 ￼\n▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n𝚝𝚑𝚎 𝚋𝚘𝚝 𝚜𝚢𝚜𝚝𝚎𝚖 𝚍𝚎𝚗𝚒𝚎𝚍 𝚢𝚘𝚞 𝚏𝚛𝚘𝚖 𝚞𝚜𝚒𝚗𝚐 𝚝𝚑𝚒𝚜 𝚌𝚖𝚍, 𝚋𝚎𝚌𝚊𝚞𝚜𝚎 𝚢𝚘𝚞 𝚊𝚛𝚎 𝚗𝚘𝚝 𝚊𝚕𝚕𝚘𝚠𝚎𝚍 𝚝𝚘 𝚊𝚌𝚌𝚎𝚜𝚜 𝚊𝚍𝚖𝚒𝚗(group) 𝚌𝚖𝚍𝚜, 𝚝𝚢𝚙𝚎 `?𝚑𝚎𝚕𝚙` 𝚝𝚘 𝚜𝚎𝚎 𝚘𝚝𝚑𝚎𝚛 𝚞𝚜𝚊𝚋𝚕𝚎 𝚌𝚖𝚍𝚜.\n►𝐌𝐀𝐓𝐄𝐎✺𝐂𝐇𝐀𝐓𝐁𝐎𝐓™◄
-handlerEvents.onlyAdminToUseOnReply=🚫▕ 𝗔𝗖𝗖𝗘𝗦𝗦 𝗗𝗘𝗡𝗜𝗘𝗗 ￼\n▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n Only group administrators can use the reply function of the command "%1"
-handlerEvents.onlyAdminToUseOnReaction=🚫▕ 𝗔𝗖𝗖𝗘𝗦𝗦 𝗗𝗘𝗡𝗜𝗘𝗗 ￼\n▬▬▬▬▬▭▬▬▬▬▬▬\n\nOnly group administrators can use the reaction function of the command "%1"
-handlerEvents.onlyAdminBot2=🚫▕ 𝗔𝗖𝗖𝗘𝗦𝗦 𝗗𝗘𝗡𝗜𝗘𝗗 ￼\n▬▬▬▬▬▭▬▬▬▬▬▬▬\n𝚝𝚑𝚎 𝚋𝚘𝚝 𝚜𝚢𝚜𝚝𝚎𝚖 𝚍𝚎𝚗𝚒𝚎𝚍 𝚢𝚘𝚞 𝚏𝚛𝚘𝚖 𝚞𝚜𝚒𝚗𝚐 𝚝𝚑𝚒𝚜 𝚌𝚖𝚍, 𝚋𝚎𝚌𝚊𝚞𝚜𝚎 𝚢𝚘𝚞 𝚊𝚛𝚎 𝚗𝚘𝚝 𝚊𝚕𝚕𝚘𝚠𝚎𝚍 𝚝𝚘 𝚊𝚌𝚌𝚎𝚜𝚜 𝚊𝚍𝚖𝚒𝚗(Bot) ??𝚖𝚍𝚜, 𝚝𝚢𝚙𝚎 `?𝚑𝚎𝚕𝚙` 𝚝𝚘 𝚜𝚎𝚎 𝚘𝚝𝚑𝚎𝚛 𝚞𝚜𝚊𝚋𝚕𝚎 𝚌𝚖𝚍𝚜.\n►𝐌𝐀𝐓𝐄𝐎✺𝐂𝐇𝐀𝐓𝐁𝐎𝐓™◄
-handlerEvents.onlyAdminBot2ToUseOnReply=❌ | 𝐒𝐎𝐑𝐑𝐘 𝐎𝐍𝐋𝐘 𝐌𝐘 𝐀𝐃𝐌𝐈𝐍 𝐂𝐀𝐍 𝐔𝐒𝐄 𝐓𝐇𝐄 𝐑𝐄𝐏𝐋𝐘 𝐅𝐔𝐍𝐂𝐓𝐈𝐎𝐍 𝐅𝐎𝐑 "%1"
-handlerEvents.onlyAdminBot2ToUseOnReaction=🚫▕ 𝗔𝗖𝗖𝗘𝗦𝗦 𝗗𝗘𝗡𝗜𝗘𝗗 ￼\n▬▬▬▬▬▬▬▭▬▬▬▬▬▬▬\n\n Only bot's admin can use the reaction function of the command "%1"
-handlerEvents.waitingForCommand=⏱ 𝐘𝐨𝐮 𝐚𝐫𝐞 𝐢𝐧 𝐭𝐡𝐞 𝐰𝐚𝐢𝐭𝐢𝐧𝐠 𝐭𝐢𝐦𝐞 𝐭𝐨 𝐮𝐬𝐞 𝐭𝐡𝐢𝐬 𝐜𝐨𝐦𝐦𝐚𝐧𝐝, 𝐩𝐥𝐞𝐚𝐬𝐞 𝐜𝐨𝐦𝐞 𝐛𝐚𝐜𝐤 𝐚𝐟𝐭𝐞𝐫 %1𝐬
-handlerEvents.errorOccurred=🚫 ⌗𝙀𝙍𝙍𝙊𝙍⌗ \n▂▂▂▂▂▂▂▂▂▂▂▂▂\n» %1 «\n▂▂▂▂▂▂▂▂▂▂▂▂▂\n\n»𝙰𝙽 𝙴𝚁𝚁𝙾𝚁 𝙾𝙲𝙲𝚄𝚁𝚁𝙴𝙳 𝙰𝚃 𝙲𝙾𝙼𝙼𝙰𝙽𝙳 "%2"\n\n%3
-handlerEvents.errorOccurred2=🚫 ⌗𝗘𝗥𝗥𝗢𝗥⌗ \𝚗▂▂▂▂▂▂▂▂▂▂▂▂▂\n» %1 « \n\n𝙰𝙽 𝙴𝚁𝚁𝙾𝚁 𝙾𝙲𝙲𝚄𝚁𝚁𝙴𝙳 𝙰𝚃 𝙲𝙾𝙼𝙼𝙰𝙽𝙳 𝙾𝙽𝙲𝙷𝙰𝚃 𝙸𝙽 𝙲𝙾𝙼𝙼𝙰𝙽𝙳 "%2"\n\n%3
-handlerEvents.errorOccurred3=🚫 ⌗ERROR⌗\n▂▂▂▂▂▂▂▂▂▂▂▂\n» %1 «\n❑ ►𝙰𝚗 𝚎𝚛𝚛𝚘𝚛 𝚘𝚌𝚌𝚞𝚛𝚛𝚎𝚍 𝚠𝚑𝚎𝚗 𝚎𝚡𝚎𝚌𝚞𝚝𝚒𝚗𝚐 𝚘𝚗𝚁𝚎𝚙𝚕𝚢 𝚊𝚝 𝚌𝚘𝚖𝚖𝚊𝚗𝚍 "%2"\n\n%3
-handlerEvents.errorOccurred4=❌ [ »%1« ]\nAn error occurred when executing onReaction at command "%2"\n\n%3
-handlerEvents.errorOccurred5=❌ [ »%1« ]\nAn error occurred when executing onEvent at command "%2"\n\n%3
-handlerEvents.errorOccurred6=❌ [ »%1« ]\nAn error occurred when executing onEvent at command "%2"\n\n%3
-handlerEvents.errorOccurred7=❌ [ `%1` ]\nAn error occurred when executing onAnyEvent at command "%2"\n\n%3
+handlerEvents.userBanned=━━━━━━━━━━━━━━━\n𝐘𝐨𝐮 𝐡𝐚𝐯𝐞 𝐛𝐞𝐞𝐧 𝐛𝐚𝐧𝐧𝐞𝐝 𝐟𝐫𝐨𝐦 𝐮𝐬𝐢𝐧𝐠 𝐭𝐡𝐞 𝐛𝐨𝐭\n» 𝐑𝐞𝐚𝐬𝐨𝐧: %1\n» 𝐓𝐢𝐦𝐞: %2\n» 𝐔𝐬𝐞𝐫 𝐈𝐃: %3\n━━━━━━━━━━━━━━━━
+handlerEvents.threadBanned=━━━━━━━━━━━━━━━\n𝐓𝐡𝐢𝐬 𝐭𝐡𝐫𝐞𝐚𝐝 𝐢𝐬 𝐛𝐚𝐧𝐧𝐞𝐝 𝐟𝐫𝐨𝐦 𝐮𝐬𝐢𝐧𝐠 𝐭𝐡𝐞 𝐛𝐨𝐭\𝐧» 𝐑𝐞𝐚𝐬𝐨𝐧: %1\n» 𝐓𝐢𝐦𝐞: %2\n» 𝐔𝐬𝐞𝐫 𝐈𝐃: %3\n━━━━━━━━━━━━━━━━
+handlerEvents.onlyAdminBox=━━━━━━━━━━━━━━━\n𝓒𝓾𝓻𝓻𝓮𝓷𝓽𝓵𝔂 𝓸𝓷𝓵𝔂 𝓰𝓻𝓸𝓾𝓹 𝓪𝓭𝓶𝓲𝓷𝓼 𝓬𝓪𝓷 𝓾𝓼𝓮 𝓫𝓸𝓽\n━━━━━━━━━━━━━━━
+handlerEvents.onlyAdminBot=MAINTENANCE MODE\n\n\nCURRENTLY NO ONE CAN USES BOT CMDS BECAUSE BUT IS ON MAINTENANCE TO AVOID SUSPENDED.\n you can only use ai command.
+handlerEvents.commandNotFound=━━━━━━━━━━━━━━━\n𝐂𝐨𝐦𝐦𝐚𝐧𝐝 ' %1 ' 𝐃𝐨𝐞𝐬𝐧'𝐭 𝐞𝐱𝐢𝐬𝐭 𝐢𝐧 𝐨𝐮𝐫 𝐬𝐲𝐬𝐭𝐞𝐦, 𝐭𝐲𝐩𝐞 %2help 𝐭𝐨 𝐬𝐞𝐞 𝐦𝐲 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐬\n━━━━━━━━━━━━━━━━
+handlerEvents.commandNotFound2=━━━━━━━━━━━━━━━\n𝐂𝐨𝐦𝐦𝐚𝐧𝐝 ' %1 ' 𝐢𝐬 𝐦𝐲 𝐩𝐫𝐞𝐟𝐢𝐱 𝐛𝐮𝐭 𝐲𝐨𝐮 𝐝𝐢𝐝𝐧'𝐭 𝐚𝐝𝐝 𝐚𝐧𝐲 𝐩𝐫𝐨𝐦𝐩𝐭, 𝐭𝐲𝐩𝐞 %1𝐡𝐞𝐥𝐩 𝐭𝐨 𝐬𝐞𝐞 𝐬𝐨𝐦𝐞 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐬 𝐭𝐡𝐚𝐭 𝐜𝐚𝐧 𝐡𝐞𝐥𝐩 𝐲𝐨𝐮 𝐮𝐬𝐞 𝐦𝐞 \n━━━━━━━━━━━━━━━
+handlerEvents.commandSyntaxError=━━━━━━━━━━━━━━━\n𝐘𝐨𝐮 𝐚𝐫𝐞 𝐮𝐬𝐢𝐧𝐠 𝐭𝐡𝐢𝐬 𝐜𝐨𝐦𝐦𝐚𝐧𝐝 𝐢𝐧𝐜𝐨𝐫𝐫𝐞𝐜𝐭𝐥𝐲 , 𝐭𝐲𝐩𝐞 %1𝐡𝐞𝐥𝐩 %2 𝐭𝐨 𝐬𝐞𝐞 𝐡𝐨𝐰 𝐭𝐨 𝐮𝐬𝐞.\n━━━━━━━━━━━━━━━
+handlerEvents.onlyAdmin=━━━━━━━━━━━━━━━\n𝐲𝐨𝐮 𝐡𝐚𝐯𝐞 𝐧𝐨 𝐚𝐜𝐜𝐞𝐬𝐬 𝐓𝐨 𝐮𝐬𝐞 𝐜𝐦𝐝 '%1' 𝐢𝐧 𝐦𝐲 𝐬𝐲𝐬𝐭𝐞𝐦 𝐛𝐞𝐜𝐚𝐮𝐬𝐞 𝐢𝐭 𝐝𝐞𝐧𝐢𝐞𝐝 𝐲𝐨𝐮 𝐟𝐫𝐨𝐦 𝐮𝐬𝐢𝐧𝐠 𝐠𝐫𝐨𝐮𝐩 𝐚𝐝𝐦𝐢𝐧 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐬 \n━━━━━━━━━━━━━━━
+handlerEvents.onlyAdminToUseOnReply=━━━━━━━━━━━━━━━\n𝐲𝐨𝐮 𝐡𝐚𝐯𝐞 𝐧𝐨 𝐚𝐜𝐜𝐞𝐬𝐬 𝐓𝐨 𝐮𝐬𝐞 𝐭𝐡𝐞 reply 𝐟𝐮𝐧𝐜𝐭𝐢𝐨𝐧 𝐟𝐨𝐫 𝐜𝐦𝐝 '%1' 𝐢𝐧 𝐦𝐲 𝐬𝐲𝐬𝐭𝐞𝐦 𝐛𝐞𝐜𝐚𝐮𝐬𝐞 𝐢𝐭 𝐝𝐞𝐧𝐢𝐞𝐝 𝐲𝐨𝐮 𝐟𝐫𝐨𝐦 𝐮𝐬𝐢𝐧𝐠 𝐠𝐫𝐨𝐮𝐩 𝐚𝐝𝐦𝐢𝐧 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐬 \n━━━━━━━━━━━━━━━
+handlerEvents.onlyAdminToUseOnReaction=━━━━━━━━━━━━━━━\n𝐲𝐨𝐮 𝐡𝐚𝐯𝐞 𝐧𝐨 𝐚𝐜𝐜𝐞𝐬𝐬 𝐓𝐨 𝐮𝐬𝐞 𝐭𝐡𝐞 𝐫𝐞𝐚𝐜𝐭 𝐟𝐮𝐧𝐜𝐭𝐢𝐨𝐧 𝐟𝐨𝐫 𝐜𝐦𝐝 '%1' 𝐢𝐧 𝐦𝐲 𝐬𝐲𝐬𝐭𝐞𝐦 𝐛𝐞𝐜𝐚𝐮𝐬𝐞 𝐢𝐭 𝐝𝐞𝐧𝐢𝐞𝐝 𝐲𝐨𝐮 𝐟𝐫𝐨𝐦 𝐮𝐬𝐢𝐧𝐠 𝐠𝐫𝐨𝐮𝐩 𝐚𝐝𝐦𝐢𝐧 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐬 \n━━━━━━━━━━━━━━━
+handlerEvents.onlyAdminBot2=━━━━━━━━━━━━━━━\n𝐲𝐨𝐮 𝐡𝐚𝐯𝐞 𝐧𝐨 𝐫𝐢𝐠𝐡𝐭 𝐭𝐨 𝐮𝐬𝐞 𝐜𝐦𝐝 %1\n━━━━━━━━━━━━━━━
+handlerEvents.onlyAdminBot2ToUseOnReply=━━━━━━━━━━━━━━━\n𝐲𝐨𝐮 𝐡𝐚𝐯𝐞 𝐧𝐨 𝐫𝐢𝐠𝐡𝐭 𝐭𝐨 𝐮𝐬𝐞 𝐭𝐡𝐞 𝐫𝐞𝐩𝐥𝐲 𝐟𝐮𝐧𝐜 𝐟𝐨𝐫 𝐜𝐦𝐝 %1\n━━━━━━━━━━━━━━━
+handlerEvents.onlyAdminBot2ToUseOnReaction=fuck you.
+handlerEvents.waitingForCommand=⏱ You are in the waiting time to use this command, please come back after %1s
+handlerEvents.errorOccurred=❌ [ %1 ]\n "%2"\n\n%3
+handlerEvents.errorOccurred2=❌ [ %1 ]\n "%2"\n\n%3
+handlerEvents.errorOccurred3=❌ [ %1 ]\n "%2"\n\n%3
+handlerEvents.errorOccurred4=❌ [ %1 ]\n "%2"\n\n%3
+handlerEvents.errorOccurred5=❌ [ %1 ]\n"%2"\n\n%3
+handlerEvents.errorOccurred6=[ %1 ]"%2"\n\n%3
+handlerEvents.errorOccurred7=❌ [ %1 ]\n"%2"\n\n%3
 handlerEvents.cannotFindCommandName=❌ Cannot find command name to execute this reply!
 handlerEvents.cannotFindCommand=❌ Cannot find command "%1" to execute this reply!
 
@@ -125,7 +124,6 @@ indexController.connectMySQLSuccess=Successfully connected SQLITE database!
 indexController.connectMySQLError=An error occurred while connecting to a SQLITE database:
 
 # updater.js
-updater.updateTooFast=Please wait at least 5 minutes after the latest commit to update without error, %1 minutes %2 seconds left
 updater.latestVersion=You are using the latest version
 updater.cantFindVersion=You are using an undefined version (%1), please check your package.json file again
 updater.newVersions=There are %1 new versions to update, starting to update...
@@ -144,12 +142,4 @@ verifyfbid.sendCode=Your verification code is:\n%1\nThe verification code is val
 utils.errorOccurred=❌ An error occurred:\n\n%1
 
 # for command
-command.restartedBot=Bot has been restarted by goatbot admin/gerald bot admin 
-
-# dashboard/app.js
-app.googleApiRefreshTokenExpired=Google API refresh token has expired or been revoked, please get a new token at https://developers.google.com/oauthplayground/
-app.tooManyRequests=Too many requests in the last minute. Please try again later.
-app.notPermissionChangeFbstate=You do not have permission to change fbstate!
-app.notFoundFbstate=Please enter fbstate!
-app.changedFbstateSuccess=Successfully changed fbstate!
-app.serverError=Server an error, please try again later!
+command.restartedBot=Bot has been restarted
