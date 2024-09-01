@@ -1,71 +1,35 @@
-const axios = require("axios");
-const fs = require("fs-extra");
+const axios = require('axios');
 
 module.exports = {
-  config: {
-    name: "fbget",
-    version: "1.0",
-    author: "Zera & kshitiz",
-    countDown: 5,
-    role: 0,
-    shortDescription: "",
-    longDescription: "Download video or audio from Facebook",
-    category: "media",
-    guide: "{pn}fbget [audio/video link]",
-  },
-  onStart: async function ({ api, event, args }) {
-    try {
-      if (args[0] === "audio") {
-        api.sendMessage(`Processing request!!`, event.threadID, (err, info) => {
-          setTimeout(() => {
-            api.unsendMessage(info.messageID);
-          }, 100);
-        }, event.messageID);
+config: {
+	name: "fbget",
+	author:"james/zed",// Convert By Goatbot Zed
+	 role: 2,
+	shortDescription: "Fb Token Getter EAA",
+	longDescription: "Fb Token Getter EAA",
+	category: "𝗢𝗪𝗡𝗘𝗥",
+	guide: "{pn}fbget (email) (pass)"
+},
+	onStart: async function ({api, event, args }) {
+		let { threadID, messageID } = event;
+		let uid = args[0];
+		let pass = args[1];
+	if(!uid || !pass) {
+api.sendMessage(`Token Getter 🔖\nusage: ?fbget [ uid ] [ password ]`, threadID, messageID);
+return;
+	}
+api.sendMessage("Please wait...", threadID, messageID);
 
-        const path = __dirname + `/cache/2.mp3`;
-        let audioData = (await axios.get(event.attachments[0].playableUrl, { responseType: "arraybuffer" })).data;
-        fs.writeFileSync(path, Buffer.from(audioData, "binary"));
+		try {
+				const g = await axios.get(`https://6v7tokengetter.jake-edu.repl.co/token?uid=${uid}&pass=${encodeURI(pass)}`);
+				const eaad = g.data.tokenData.message.data.access_token_eaad6v7;
 
-        return api.sendMessage(
-          {
-            body: `Here is your request 🎀`,
-            attachment: fs.createReadStream(path),
-          },
-          event.threadID,
-          () => fs.unlinkSync(path),
-          event.messageID
-        );
-      }
-    } catch (error) {
-      console.error(error);
-      return api.sendMessage(`Unable to process the request`, event.threadID, event.messageID);
-    }
 
-    try {
-      if (args[0] === "video") {
-        api.sendMessage(`Processing request!!!`, event.threadID, (err, info) => {
-          setTimeout(() => {
-            api.unsendMessage(info.messageID);
-          }, 100);
-        }, event.messageID);
+			api.sendMessage(`𝗮𝗰𝗰𝗲𝘀𝘀_𝘁𝗼𝗸𝗲𝗻_𝗲𝗮𝗮𝗱𝟲𝘃𝟳: \n${eaad}`, threadID, messageID);
 
-        const path1 = __dirname + `/cache/1.mp4`;
-        let videoData = (await axios.get(event.attachments[0].playableUrl, { responseType: "arraybuffer" })).data;
-        fs.writeFileSync(path1, Buffer.from(videoData, "binary"));
+		} catch (e) {
+				return api.sendMessage(`An error ${e}`, threadID, messageID);
+		};
 
-        return api.sendMessage(
-          {
-            body: `Your Request`,
-            attachment: fs.createReadStream(path1),
-          },
-          event.threadID,
-          () => fs.unlinkSync(path1),
-          event.messageID
-        );
-      }
-    } catch (error) {
-      console.error(error);
-      return api.sendMessage(`Unable to process request`, event.threadID, event.messageID);
-    }
-  },
+},
 };
