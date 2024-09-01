@@ -22,14 +22,12 @@ async function handleCommand(api, event, args, message) {
 
 async function getAnswerFromAI(question) {
     try {
-        const services = [
-            { url: 'https://markdevs-last-api.onrender.com/gpt4', params: { prompt: question, uid: 'your-uid-here' } },
-            { url: 'http://markdevs-last-api.onrender.com/api/v2/gpt4', params: { query: question } },
-            { url: 'https://markdevs-last-api.onrender.com/api/v3/gpt4', params: { ask: question } }
+        const API = [
+            'https://api.kenliejugarap.com/gptgo/?text=${question}'
         ];
 
         for (const service of services) {
-            const data = await fetchFromAI(service.url, service.params);
+            const data = await fetchFromAI(API);
             if (data) return data;
         }
 
@@ -40,9 +38,9 @@ async function getAnswerFromAI(question) {
     }
 }
 
-async function fetchFromAI(url, params) {
+async function fetchFromAI(API) {
     try {
-        const { data } = await axios.get(url, { params });
+        const { data } = await axios.get(API);
         if (data && (data.gpt4 || data.reply || data.response || data.answer || data.message)) {
             const response = data.gpt4 || data.reply || data.response || data.answer || data.message;
             console.log("AI Response:", response);
@@ -69,18 +67,17 @@ async function getAIResponse(input, userId, messageID) {
 
 module.exports = {
     config: {
-        name: 'ai',
+        name: '🤖',
         author: 'coffee',
         role: 0,
-        category: 'ai',
+        category: 'Ai - chat',
         shortDescription: 'AI to answer any question',
     },
     onStart: async function ({ api, event, args }) {
         const input = args.join(' ').trim();
         try {
-            const { response, messageID } = await getAIResponse(input, event.senderID, event.messageID);
-            lastResponseMessageID = messageID;
-            api.sendMessage(`➣𝙶𝚎𝚛𝚊𝚕𝚍\n━━━━━━━━━━━━━━━━\n ➭ ❝ ${response} ❞\n━━━━━━━━━━━━━━━━`, event.threadID, messageID);
+            const { response } = await getAIResponse(input, event.senderID, event.messageID);
+            api.sendMessage(`➣𝙶𝚎𝚛𝚊𝚕𝚍\n━━━━━━━━━━━━━━━━\n ➭ ❝ ${response} ❞\n━━━━━━━━━━━━━━━━\n YOUR QUESTION: ${input}\n━━━━━━━━━━━━━━━━\n[CATEGORY]: GPT4`, event.threadID, messageID);
         } catch (error) {
             console.error("Error in onStart:", error.message);
             api.sendMessage("An error occurred while processing your request.", event.threadID);
@@ -90,12 +87,12 @@ module.exports = {
         const messageContent = event.body.trim().toLowerCase();
 
         // Check if the message is a reply to the bot's message or starts with "ai"
-        if ((event.messageReply && event.messageReply.senderID === api.getCurrentUserID()) || (messageContent.startsWith("ai") && event.senderID !== api.getCurrentUserID())) {
+        if ((event.messageReply && event.messageReply.senderID === api.getCurrentUserID()) || (messageContent.startsWith("ai", "teo", "mateo", "ma", "bot", "gpt4", "gpt4o", "chatgpt", "gerald", this.config.name) && event.senderID !== api.getCurrentUserID())) {
             const input = messageContent.replace(/^ai\s*/, "").trim();
             try {
                 const { response, messageID } = await getAIResponse(input, event.senderID, event.messageID);
                 lastResponseMessageID = messageID;
-                api.sendMessage(`➣𝙶𝚎𝚛𝚊𝚕𝚍\n━━━━━━━━━━━━━━━━\n ➭ ❝ ${response} ❞\n━━━━━━━━━━━━━━━━`, event.threadID, messageID);
+                api.sendMessage(`➣𝙶𝚎𝚛𝚊𝚕𝚍\n━━━━━━━━━━━━━━━━\n ➭ ❝ ${response} ❞\n━━━━━━━━━━━━━━━━\n YOUR QUESTION: ${input}\n━━━━━━━━━━━━━━━━\n[CATEGORY]: GPT4`, event.threadID, messageID);
             } catch (error) {
                 console.error("Error in onChat:", error.message);
                 api.sendMessage("An error occurred while processing your request.", event.threadID);
