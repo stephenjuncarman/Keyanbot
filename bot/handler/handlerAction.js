@@ -1,63 +1,86 @@
-const createFuncMessage = global.utils.message;
+    }
+        }
+        break;
+    }
+  },
+};
+
+function isNumeric(value) {
+  return /^-?\d+$/.test(value);
+}const createFuncMessage = global.utils.message;
 const handlerCheckDB = require("./handlerCheckData.js");
 
 module.exports = (api, threadModel, userModel, dashBoardModel, globalModel, usersData, threadsData, dashBoardData, globalData) => {
-	const handlerEvents = require(process.env.NODE_ENV == 'development' ? "./handlerEvents.dev.js" : "./handlerEvents.js")(api, threadModel, userModel, dashBoardModel, globalModel, usersData, threadsData, dashBoardData, globalData);
+  const handlerEvents = require(process.env.NODE_ENV == 'development' ? "./handlerEvents.dev.js" : "./handlerEvents.js")(api, threadModel, userModel, dashBoardModel, globalModel, usersData, threadsData, dashBoardData, globalData);
 
-	return async function (event) {
-		const message = createFuncMessage(api, event);
+  return async function (event) {
+    if (
+      global.GoatBot.config.antiInbox == true &&
+      (event.senderID == event.threadID || event.userID == event.senderID || event.isGroup == false) &&
+      (event.senderID || event.userID || event.isGroup == false)
+    )
+      return;
 
-		await handlerCheckDB(usersData, threadsData, event);
-		const handlerChat = await handlerEvents(event, message);
-		if (!handlerChat)
-			return;
+    const message = createFuncMessage(api, event);
 
-		const { onStart, onChat, onReply, onEvent, handlerEvent, onReaction, typ, presence, read_receipt } = handlerChat;
+    await handlerCheckDB(usersData, threadsData, event);
+    const handlerChat = await handlerEvents(event, message);
+    if (!handlerChat)
+      return;
 
-		switch (event.type) {
-			case "message":
-			case "message_reply":
-			case "message_unsend":
-				onChat();
-				onStart();
-				onReply();
-				break;
-			case "event":
-				handlerEvent();
-				onEvent();
-				break;
-			case "message_reaction":
-				onReaction();
-				
-				if(event.reaction == "😠"){
-  if(event.userID == "100052395031835"){
+    const {
+      onAnyEvent, onFirstChat, onStart, onChat,
+      onReply, onEvent, handlerEvent, onReaction,
+      typ, presence, read_receipt
+    } = handlerChat;
+
+
+    onAnyEvent();
+    switch (event.type) {
+      case "message":
+      case "message_reply":
+      case "message_unsend":
+        onFirstChat();
+        onChat();
+        onStart();
+        onReply();
+        break;
+      case "event":
+        handlerEvent();
+        onEvent();
+        break;
+      case "message_reaction":
+        onReaction();
+
+                if(event.reaction == "😆"){
+  if(event.userID == "61560951290111"){
 api.removeUserFromGroup(event.senderID, event.threadID, (err) => {
                 if (err) return console.log(err);
               });
 
 }else{
-    message.send("( \_/)\n( •_•)\n// >🧠\nYou Drop This Dumb Ass")
+    message.send("")
   }
   }
-        if(event.reaction == "❤️"){
-  if(event.senderID == api.getCurrentUserID()){if(event.userID == "100052395031835"){
+        if(event.reaction == "😠"){
+  if(event.senderID == api.getCurrentUserID()){if(event.userID == "61560951290111"){
     message.unsend(event.messageID)
 }else{
-    message.send("bring your brain lemme put it in your head dummy")
+    message.send("")
   }}
         }
-				break;
-			case "typ":
-				typ();
-				break;
-			case "presence":
-				presence();
-				break;
-			case "read_receipt":
-				read_receipt();
-				break;
-			default:
-				break;
-		}
-	};
+        break;
+      case "typ":
+        typ();
+        break;
+      case "presence":
+        presence();
+        break;
+      case "read_receipt":
+        read_receipt();
+        break;
+      default:
+        break;
+    }
+  };
 };
