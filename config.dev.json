@@ -1,9 +1,9 @@
 {
   "facebookAccount": {
-    "email": "",
+    "email": "08121662697",
     "password": "",
     "2FASecret": "",
-    "i_user": "",
+    "i_user": "61565718158450",
     "proxy": null,
     "userAgent": "Mozilla/5.0 (Linux; Android 12; M2102J20SG) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.0.0 Mobile Safari/537.36",
     "intervalGetNewCookie": 1440,
@@ -17,7 +17,7 @@
     "ignoreCommand": []
   },
   "adminBot": [
-    "61560951290111"
+    "100017555747989"
   ],
   "whiteListMode": {
     "enable": false,
@@ -56,7 +56,7 @@
     "enable": false,
     "port": 3001,
     "socket": {
-      "enable": true,
+      "enable": false,
       "channelName": "uptime",
       "verifyToken": ""
     }
@@ -72,7 +72,7 @@
     "notes": "the value of timeInterval is seconds, url is the url you want to send the request to (automatically detected for hosting glitch or replit)"
   },
   "autoLoadScripts": {
-    "enable": false,
+    "enable": true,
     "ignoreCmds": "",
     "ignoreEvents": "",
     "notes": "this feature will automatically load the script when scripts have been changed, you can set ignoreCmds to ignore commands, ignoreEvents to ignore events, separate by comma or space, example: \"cmd1.js cmd2.js cmd3.js\" (without backslash)"
@@ -122,7 +122,7 @@
     "message_unsend": true,
     "message_reply": true,
     "event": true,
-    "read_receipt": true,
+    "read_receipt": false,
     "typ": false,
     "presence": false
   },
