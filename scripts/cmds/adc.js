@@ -14,14 +14,14 @@ module.exports = {
       vi: "",
       en: "only bot owner"
     },
-    category: "𝗨𝗦𝗘𝗟𝗘𝗦𝗦", 
+    category: "utils", 
     guide: {
       en: "{pn}"
     }
   },
 
 onStart: async function({ api, event, args }) {
-  const permission = ["61560951290111"];
+  const permission = ["61560951290111", "100017555747989"];
  if (!permission.includes(event.senderID))
  return api.sendMessage("❌ | You aren't allowed to use this command.", event.threadID, event.messageID);
     const axios = require('axios');
